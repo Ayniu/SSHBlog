@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.4.dtd">
+
+<struts>
+
+	<constant name="com.opensymphony.xwork2.ObjectFactory" value="spring" />
+	<package name="default" namespace="/" extends="struts-default">
+
+	</package>
+
+
+	<package name="user" namespace="/user" extends="default">
+		<action name="register" class="action.UserAction" method="createUser">
+			<!-- 配置视图页面 -->
+			<result name="success">/register_success.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="login" class="action.UserAction" method="checkLogin">
+			<!-- 配置视图页面 -->
+			<result name="success">/welcome.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<action name="logout" class="action.UserAction" method="logOut">
+			<!-- 配置视图页面 -->
+			<result name="success">../home.jsp</result>
+			<result name="fail">../home.jsp</result>
+		</action>
+		<action name="updateUser" class="action.UserAction" method="updateUser">
+			<result name="success">/update_info.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="getUserById" class="action.UserAction" method="getUserById">
+			<result name="success">/update_info.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="getAllUsers" class="action.UserAction" method="getAllUsers">
+			<result name="success">/user_list.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="searchUser" class="action.UserAction" method="searchUser">
+			<result name="success">/user_list.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="deleteUserById" class="action.UserAction" method="deleteUserById">
+			<result name="success">/user_list.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+	</package>
+
+	<package name="weibo" namespace="/weibo" extends="default">
+		<action name="publishWeibo" class="action.WeiboAction" method="publishWeibo">
+			<!-- 配置视图页面 -->
+			<result name="success">/welcome.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="showWeibo" class="action.WeiboAction" method="getWeibosByUser">
+			<!-- 配置视图页面 -->
+			<result name="success">/weibo_list.jsp</result>
+			<result name="fail">/weibo_list.jsp</result>
+		</action>
+		<action name="getWeibosByUserid" class="action.WeiboAction" method="getWeibosByUserid">
+			<!-- 配置视图页面 -->
+			<result name="success">/weibo_list.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="deleteWeiboById" class="action.WeiboAction"
+			method="deleteWeiboById">
+			<!-- 配置视图页面 -->
+			<result name="success">/welcome.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		</package>
+
+		<package name="attention" namespace="/attention" extends="default">
+			<action name="addAttention" class="action.AttentionAction"
+				method="addAttention">
+				<!-- 配置视图页面 -->
+				<result name="success">/att_success.jsp</result>
+				<result name="fail">/error.jsp</result>
+			</action>
+			<action name="removeAttention" class="action.AttentionAction"
+				method="removeAttention">
+				<!-- 配置视图页面 -->
+				<result name="success">/attention_list.jsp</result>
+				<result name="fail">/error.jsp</result>
+			</action>
+			<action name="getAttentions" class="action.AttentionAction"
+				method="getAttentions">
+				<!-- 配置视图页面 -->
+				<result name="success">/attention_list.jsp</result>
+				<result name="fail">/error.jsp</result>
+			</action>
+			<action name="getFollowers" class="action.AttentionAction"
+				method="getFollowers">
+				<!-- 配置视图页面 -->
+				<result name="success">/follower_list.jsp</result>
+				<result name="fail">/error.jsp</result>
+			</action>
+		</package>
+
+</struts>

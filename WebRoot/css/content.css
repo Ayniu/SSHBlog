@@ -1,0 +1,608 @@
+body,h1,h2,h3,h4,h5,h6,hr,p,
+blockquote,dl,dt,dd,ul,ol,li,
+pre,form,fieldset,legend,
+button,input,textarea,th,td{
+  margin: 0;
+  padding: 0;
+  font-family: Microsoft YaHei, serif;
+  font-size: 16px;
+}
+body{
+  background-color: #fff;
+}
+li{
+  list-style: none;
+}
+input[type="password"] {
+  /*padding: 2px 5px;*/
+}
+input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  margin: 0 8px 0 30px;
+  vertical-align: middle;
+}
+select {
+  width: 180px;
+  padding: 4px 8px;
+}
+textarea {
+  width: 300px;
+  padding: 5px 8px;
+  height: 100px;
+  vertical-align: top;
+  resize: none;
+}
+label { color: #828890; }
+
+.wrap input,
+.wrap select,
+.wrap textarea {
+	border: 1px solid #c8c8c8;
+	border-radius: 5px;
+	outline: none;
+}
+.btn_blue:hover {
+	background-color: #0f72b4 !important;
+}
+.button {
+  color: #2cb5e7;
+  cursor: pointer;
+}
+.button2 {
+  display: inline-block;
+  color: #2285c7;
+  cursor: pointer;
+}
+.main_btn {
+  margin: 10px 20px 0 0;
+}
+
+/*움*/
+.wrap{
+	padding: 20px 0 20px 30px;
+	border-bottom: 1px solid #e9e9e9;
+	text-align: left !important;
+}
+.wrap input[type="text"]{
+	width: 190px;
+	padding: 5px;
+}
+.wrap .modType {
+	width: 200px;
+	vertical-align: middle;
+}
+.wrap .modTypeList {
+	width: 168px;
+} 
+.wrap .input_div {
+	width: 320px;
+	margin: 0 30px 15px 0;
+}
+.wrap .input_div label {
+	display: inline-block;
+	width: 100px;
+	margin-right: 10px;
+	color: #333;
+	line-height: 28px;
+	text-align: right;
+}
+.img_div img {
+	display: inline-block;
+	margin: 10px 18px 0 110px;
+	width: 245px;
+	height: 245px;
+	background: #efefef;
+	border: 2px solid #d9d9d9;
+}
+.img_div button {
+	width: 125px;
+	background: #efefef;
+	border: 1px solid #d9d9d9;
+	border-radius: 5px;
+	line-height: 27px;
+	vertical-align: top;
+}
+.wrap .button_div {
+	text-align: center;
+}
+.wrap .button_div #submit {
+	margin-right: 80px;
+}
+.rightMenu{
+  background-color: #fff;
+  float: left;
+}
+div.tabDiv,div.tabAMDiv{
+  height: 320px;
+  border-radius: 5px;
+  overflow: hidden;
+  box-shadow: 0 3px 3px #E3E4E8;
+}
+div.tabDiv{
+  margin: 50px 115px;
+}
+div.tabAMDiv{
+  margin-top: 20px;
+}
+.courseT{
+  width: 770px;
+  height: auto;
+}
+.courseT tr th,.courseT caption{
+  height: 35px;
+  line-height: 35px;
+}
+.courseT tr td{
+  height: 50px;
+  line-height: 50px;
+}
+.courseT caption{
+  color: #fff;
+  background-color: #2CB5E7;
+  font-size: 16px;
+  width: 770px;
+}
+.courseT caption span{
+  float: left;
+  margin-left: 44px;
+}
+div.shadow{
+  background-color: rgba(0,0,0,0.1);
+  height: 35px;
+  width: 770px;
+  position: relative;
+  top: 35px;
+}
+.addT{
+  background-color: rgba(0,0,0,0.1);
+  width: 35px;
+  height: 35px;
+  display: inline-block;
+  z-index: 99;
+  float: right;
+}
+.addT img{
+  margin-top: 7px;
+}
+.courseT tr.cata{
+  color: #fff;
+  background-color: #A4AEB9;
+}
+.courseT tr{
+  color: #a4a9ae;
+  font-size: 12px;
+}
+.courseT tr td{
+  width: 193px;
+  text-align: center;
+}
+.trW,
+.tabDiv tr:nth-child(even),
+.tabAMDiv tr:nth-child(odd) {
+  background-color: #fff;
+}
+.trG,
+.tabDiv tr:nth-child(odd),
+.tabAMDiv tr:nth-child(even){
+  background-color: #F6F8FA;
+}
+.accMngCon{
+  width: 1020px;
+  height: 570px;
+  box-shadow:  0 3px 3px #C4C4C4;
+  margin: 30px;
+  background-color: #F0F3F7;
+  padding: 15px 25px;
+}
+.accInfo,.accInfo2{
+  width: 160px;
+  height: 30px;
+  margin-right: 10px;
+  line-height: 30px;
+  float: left;
+  position: relative;
+}
+.accInfoS,.modTypeS{
+  background-color: #fff;
+  color: #555;
+  font-size: 12px;
+  border:1px solid #D4D8DE;
+  border-radius: 3px;
+  text-indent: 10px;
+  line-height: 30px;
+}
+.accInfoS i,.modTypeS i{
+  width: 20px;
+  height: 20px;
+  background: url("../images/tri1.png") no-repeat 10px 12px rgb(189,194,202);
+  z-index: 99;
+  padding: 5px;
+  float: right;
+}
+.accInfoList,.modTypeList{
+  position: absolute;
+  top: 25px;
+  background-color: #fff;
+  width: 128px;
+  text-indent: 10px;
+  border:1px solid #D4D8DE;
+  border-top: none;
+  display: none;
+  z-index: 99;
+}
+.accInfoList li {
+  height: 30px;
+  color: #111;
+  line-height: 30px;
+  font-size: 14px;
+}
+.accInfoList li:hover {
+  color: #fff;
+  background: #55a2d5;
+}
+/*.accInfoList ul li a,.modTypeList ul li a{
+  color: #ccc;
+  font-size: 12px;
+}
+.accInfoList ul li a:hover,.modTypeList ul li a:hover{
+  text-decoration: underline;
+}*/
+.accOpr input[type="checkbox"] {
+	margin-top: 8px;
+	vertical-align: top;
+}
+.accOpr .seaCon{
+  width: 210px;
+  height: 30px;
+  border:2px solid #E3E4E8;
+  vertical-align: top;
+}
+.accOpr .search {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  border-radius: 5px;
+  background: url("../images/search.png") no-repeat 5px 5px rgb(34,133,199);
+  border: 1px solid #2285C7;
+  cursor: pointer;
+}
+
+table.accInfoT{
+  width: 100%;
+}
+.accInfoT tr{
+  height: 33px;
+  color: #a4a9ae;
+  text-align: center;
+  font-size: 14px;
+}
+.accInfoT tr th{
+  background-color: #2CB5E7;
+  color: #fff;
+  font-size: 14px;
+  font-weight: normal;
+  padding: 10px;
+}
+.accInfoT span.mod{
+  color: #72ad00;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.accInfoT span.del{
+  cursor: pointer;
+  color: #ed5565;
+}
+.accPage{
+  margin-top: 15px;
+  padding-left: 10px;
+}
+.accPage .button2 {
+  margin: 5px 30px 0 0;
+  color: #318dcb;
+}
+.accPage button{
+  float: right;
+  background-color: #2cb5e7;
+  border-bottom: 3px solid #2486c8;
+  border-radius: 3px;
+  color: #fff;
+  display: inline-block;
+  height: 33px;
+  line-height: 25px;
+  margin-left: 10px;
+  padding: 2px 20px;
+  text-align: center;
+}
+.accScr{
+  width: 330px;
+  margin: 40px 30px;
+}
+.accScr ul li{
+  height: 35px;
+  line-height: 35px;
+  margin-bottom: 10px;
+  width: 275px;
+  font-size: 13px;
+}
+.accScr ul li input{
+  float: right;
+  height: 30px;
+  width: 180px;
+}
+.delFrame{
+  background-color: #fff;
+  width: 350px;
+  height: 190px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -200px;
+  z-index: 999;
+  padding: 25px;
+  display: none;
+}
+.delUl{
+  width: 180px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left; 
+}
+.modUl{
+  height: 220px;
+}
+.delUl li{
+  height: 25px;
+  line-height: 25px;
+  font-size: 14px;
+}
+.modUl li{
+  line-height: 34px;
+  width: 250px;
+  font-size: 12px;
+}
+.delUl li span{
+  padding-left: 10px;
+}
+.modUl li input{
+  float: right;
+  height: 28px;
+  line-height: 25px;
+  margin-left: 10px;
+  width: 180px;
+  border: 1px solid #d4d8de;
+  border-radius: 3px;
+}
+.accBg{
+  position: fixed;
+  display: none;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.5);
+}
+.modFrame{
+  background-color: #fff;
+  width: 380px;
+  height: 250px;
+  font-size: 12px;
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  margin-left: -200px;
+  z-index: 999;
+  padding: 25px;
+  display: none;
+}
+.modType{
+  position: relative;
+  display: inline-block;
+  width: 160px;
+  height: 30px;
+  line-height: 29px;
+}
+.modClose{
+  width: 20px;
+  height: 20px;
+  background: url("../images/close.png") no-repeat;
+  position: absolute; 
+  right: 10px;
+  top: 10px;
+  display: block;
+  cursor: pointer;
+}
+ul.auth{
+  width: 200px;
+  float: right;
+  margin-right: -40px;
+}
+ul.auth li{
+  float: left;
+  width: 90px;
+  height: 25px;
+  position: relative;
+}
+ul.auth li input{
+  -moz-appearance: none;
+  background: url("../images/checkbox.png") no-repeat -20px 0;
+  border: medium none;
+  box-sizing: border-box;
+  height: 12px;
+  left: -18px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 12px;
+  vertical-align: middle;
+  width: 12px;
+}
+.auth li input+label::before{
+  background:url("../images/checkbox.png") no-repeat -20px 0;
+  content: " ";
+  height: 22px;
+  left: -25px;
+  top: 8px;
+  position: absolute;
+  width: 22px;
+}
+ul.auth li input:checked+label::before{
+  background-position: 1px 0;
+}
+.post{
+  display: block;
+  margin-top: 25px;
+  margin-left: 68px;
+}
+.bgW{
+  background-color: #fff;
+  height: 555px;
+  margin-left: -6px;
+  margin-top: -14px;
+  padding-left: 30px;
+  padding-top: 25px;
+  width: 1000px;
+}
+.ban>li{
+  display: none;
+}
+.ban li.ban_on{
+  display: block;
+}
+ul.item {
+  left: 49px;
+  margin-top: 17px;
+  position: relative;
+  top: 15px;
+}
+ul.item li{
+  float: left;
+  cursor: pointer;
+}
+ul.item li span{
+  background-color: #fff;
+  color: #b9bcc6;
+  padding: 15px 45px;
+}
+ul.item li.item_on span{
+  border-top: 3px solid #2285C7;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  background-color: #F0F3F7;
+  color: #2285c7;
+}
+/* 资金发放页复选框 start*/
+.accInfoT span.chk{
+  cursor: pointer;
+  color: #2285c7;
+}
+.accInfoT td.address {
+    font-size: 12px;
+    text-align: left;
+    width: 150px;
+}
+.accPage label{
+  position: relative;
+}
+.accInfoT tr td label{
+  position: relative;
+  margin-left: 20px;
+}
+.accPage input,.accInfoT input{
+  -moz-appearance: none;
+  background: url("../images/checkbox.png") no-repeat -20px 0;
+  border: medium none;
+  box-sizing: border-box;
+  height: 12px;
+  left: -18px;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+  top: 12px;
+  vertical-align: middle;
+  width: 12px;
+}
+.accPage input+label::before,.accInfoT input+label::before{
+  background:url("../images/checkbox.png") no-repeat -20px 0;
+  content: " ";
+  height: 22px;
+  left: -31px;
+  top: 2px;
+  position: absolute;
+  width: 22px;
+}
+.accPage input:checked+label::before,.accInfoT input:checked+label::before{
+  background-position: 1px 0;
+}
+.selAllDiv{
+  margin-left: 25px;
+  padding-top: 2px;
+  position: relative;
+}
+/* 资金发放页复选框 end*/
+
+#stime,#etime { width: 85px; }
+#timeStart,#timeEnd {
+  width: 120px;
+  background: url(../images/cxcalendar.png) no-repeat right center;
+}
+.timeSpan {
+	display:inline-block;
+	height:34px;
+	vertical-align:top;
+	line-height:34px;
+}
+button#uploadImg,button#img_choose{
+  margin-top: 10px;
+}
+
+/*用户审核弹框*/
+.wid6{
+  width: 660px;
+}
+.dialog .wid6 div.leftP{
+  min-height: 165px;
+} 
+.dialog .leftP{
+  width: 318px;
+  float: left;
+  border-right: 1px solid #ddd;
+}
+.dialog .leftP li{
+  height: 25px;
+  line-height: 25px;
+}
+.dialog .rightP{
+  float: left;
+}
+.rightP .imgP{
+  margin: 50px 20px;
+}
+.dialog .dialog_div .leftP button{
+  float: right;
+  margin-top: 120px;
+}
+.dialog #authenticated input{
+  margin-left: 20px;
+}
+.btmdiv{
+  border: 1px solid #efefef;
+  float: left;
+  padding: 22px;
+  width: 615px;
+}
+.leftP #hint {
+  float: left;
+  margin-top: 130px;
+}
+.dialog .dialog_div button.usrClose{
+  margin: 20px 235px;
+  text-align: center;
+}
+.imgP #img_img{
+  width: 200px;
+  height: 100px;
+  background: #efefef;
+  border: 2px solid #d9d9d9;
+  display: block;
+}

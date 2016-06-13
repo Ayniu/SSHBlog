@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.4.dtd">
+
+<struts>
+
+	<package name="default" namespace="/" extends="struts-default">
+
+	</package>
+	
+	<package name="user" namespace="/user" extends="default">
+		<action name="register" class="action.UserAction" method="createUser">
+			<!-- 配置视图页面 -->
+			<result name="success">/user/register_success.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="login" class="action.UserAction" method="checkLogin">
+			<!-- 配置视图页面 -->
+			<result name="success">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<action name="logout" class="action.UserAction" method="logOut">
+			<!-- 配置视图页面 -->
+			<result name="success">/index.jsp</result>
+			<result name="fail">/login.jsp</result>
+		</action>
+		<!-- <action name="updateUser" class="action.UserAction" method="updateUser">
+			配置视图页面
+			<result name="success">/user/user_detail.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="getUserById" class="action.UserAction" method="getUserById">
+			配置视图页面
+			<result name="success">/user/update_user.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="getAllUsers" class="action.UserAction" method="getAllUsers">
+			配置视图页面
+			<result name="success">/user/user_list.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
+		<action name="deleteUserById" class="action.UserAction" method="deleteUserById">
+			配置视图页面
+			<result name="success">/user/user_detail.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action> -->
+	</package>
+
+</struts>

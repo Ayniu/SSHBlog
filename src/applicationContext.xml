@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 建立数据源 -->
+	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<!-- 数据库驱动，这里使用的是MySQL数据库 -->
+		<property name="driverClassName" value="com.mysql.jdbc.Driver">
+		</property>
+		<!-- 数据库地址，这里也要注意一下编码，不然乱码可是很郁闷的哦！ -->
+		<property name="url" value="jdbc:mysql://localhost:3306/weibo?useUnicode=true&amp;characterEncoding=UTF-8">
+		</property>
+		<!-- 数据库的用户名和密码 -->
+		<property name="username" value="root">
+		</property>
+		<property name="password" value="root">
+		</property>
+	</bean>
+
+	<!-- 把数据源注入给Session工厂 -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource">
+			<ref bean="dataSource" />
+		</property>
+		 <!-- hibernate的基本配置，如:方言，是否显示sql等 -->
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.current_session_context_class">thread</prop>
+                <prop key="hibernate.dialect">org.hibernate.dialect.MySQLDialect</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
+            </props>
+        </property>
+        <property name="mappingResources">  
+             <list>
+                <value>entity/User.hbm.xml</value>
+                <value>entity/Weibo.hbm.xml</value>
+                <value>entity/Attention.hbm.xml</value>
+             </list>  
+         </property> 
+	</bean>
+
+	<!-- 把Session工厂注入给hibernateTemplate -->
+	<!-- 解释一下hibernateTemplate：hibernateTemplate提供了很多方便的方法，在执行时自动建立 HibernateCallback 
+		对象，例如：load()、get()、save、delete()等方法。 <bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate"> 
+		<constructor-arg> <ref local="sessionFactory" /> </constructor-arg> </bean> -->
+
+	<!-- BaseDAO注册 -->
+	<bean id="baseDAO" class="dao.BaseDAO" abstract="true">
+		<property name="sessionFactory" ref="sessionFactory" />
+	</bean>
+
+	<!-- 把DAO注入给Session工厂 -->
+	<bean id="userDAO" class="dao.impl.UserDAO" parent="baseDAO" />
+	<bean id="weiboDAO" class="dao.impl.WeiboDAO" parent="baseDAO" />
+	<bean id="attentionDAO" class="dao.impl.AttentionDAO" parent="baseDAO" />
+
+	<!-- 把Service注入给DAO -->
+	<bean id="userService" class="service.impl.UserService">
+		<property name="userDAO" ref="userDAO" />
+	</bean>
+	<bean id="weiboService" class="service.impl.WeiboService">
+		<property name="weiboDAO" ref="weiboDAO" />
+	</bean>
+	<bean id="attentionService" class="service.impl.AttentionService">
+		<property name="attentionDAO" ref="attentionDAO" />
+	</bean>
+
+	<!-- 把Action注入给Service -->
+	<bean name="/user" id="userAction" class="action.UserAction">
+		<property name="userService" ref="userService" />
+	</bean>
+	<bean name="/weibo" id="weiboAction" class="action.WeiboAction">
+		<property name="weiboService" ref="weiboService" />
+	</bean>
+	<bean name="/attention" id="attentionAction" class="action.AttentionAction">
+		<property name="attentionService" ref="attentionService" />
+	</bean>
+</beans>  
+
+   
