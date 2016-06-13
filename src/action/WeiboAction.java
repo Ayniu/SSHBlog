@@ -1,9 +1,13 @@
 package action;
 
+import java.util.Map;
+
 import service.IWeiboService;
 
+import com.opensymphony.xwork2.ActionContext;
 import com.opensymphony.xwork2.ModelDriven;
 
+import entity.Pager;
 import entity.User;
 import entity.Weibo;
 
@@ -38,6 +42,7 @@ public class WeiboAction extends SuperAction implements ModelDriven<Weibo> {
 			return "fail";
 		}
 	}
+	
 	// 获取指定id用户所有微博
 	public String getWeibosByUserid() throws Exception {
 		// 获取url参数 
@@ -45,6 +50,25 @@ public class WeiboAction extends SuperAction implements ModelDriven<Weibo> {
 		Weibo[] weibos = weiboService.getWeibosByUserid(userid);
 		if (weibos != null) {
 			session.setAttribute("weibos", weibos);
+			session.setAttribute("owner", "0");
+			return "success";
+		} else {
+			return "fail";
+		}
+	}
+	
+	// 获取指定id用户所有微博并翻页显示
+	public String getWeibosByUseridPaging() throws Exception {
+		// 获取url参数 
+		int userid = Integer.parseInt(request.getParameter("userid"));
+		int totalSize = weiboService.getTotalByUserid(userid);
+		int currentPage = request.getParameter("currentPage")!=null ? Integer.parseInt(request.getParameter("currentPage")) : 1;
+		Pager pager = new Pager(currentPage, totalSize);
+		Weibo[] weibos = weiboService.getWeibosByUseridPaging(userid, currentPage, pager.getPageSize());
+		Map request = (Map) ActionContext.getContext().get("request");
+		if (weibos != null) {
+			request.put("weibos", weibos);
+			request.put("pager", pager);
 			session.setAttribute("owner", "0");
 			return "success";
 		} else {

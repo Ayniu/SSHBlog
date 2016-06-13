@@ -42,4 +42,17 @@ public class WeiboService implements IWeiboService{
 		return weiboDAO.getWeibosByUserid(userid);
 	}
 
+	@Override
+	public Weibo[] getWeibosByUseridPaging(int userid, int currentPage,
+			int pageSize) {
+		// TODO Auto-generated method stub
+		return weiboDAO.getWeibosByUseridPaging(userid, currentPage, pageSize);
+	}
+
+	@Override
+	public int getTotalByUserid(int userid) {
+		// TODO Auto-generated method stub
+		return weiboDAO.getTotalByUserid(userid);
+	}
+
 }

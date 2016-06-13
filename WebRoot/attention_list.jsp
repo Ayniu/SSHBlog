@@ -60,7 +60,7 @@
 	<s:iterator value="#attUsers" var="attUser">
 		<div class="att_area">
 			<a
-				href="<%=basePath%>/weibo/getWeibosByUserid?userid=<s:property value="#attUser.userid" />">
+				href="<%=basePath%>/weibo/getWeibosByUseridPaging?userid=<s:property value="#attUser.userid" />">
 				<div class="col-md-2">
 					<img src="<%=basePath%>img/avator<%=avatorId%>.png" class="avator"
 						width="50" height="50">

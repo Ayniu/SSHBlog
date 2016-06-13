@@ -65,6 +65,11 @@
 			<result name="success">/weibo_list.jsp</result>
 			<result name="fail">/error.jsp</result>
 		</action>
+		<action name="getWeibosByUseridPaging" class="action.WeiboAction" method="getWeibosByUseridPaging">
+			<!-- 配置视图页面 -->
+			<result name="success">/weibo_list_paging.jsp</result>
+			<result name="fail">/error.jsp</result>
+		</action>
 		<action name="deleteWeiboById" class="action.WeiboAction"
 			method="deleteWeiboById">
 			<!-- 配置视图页面 -->

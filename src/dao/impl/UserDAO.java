@@ -11,7 +11,6 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import dao.BaseDAO;
 import dao.IUserDAO;
-import db.MyHibernateSessionFactory;
 import entity.User;
 
 public class UserDAO extends BaseDAO implements IUserDAO {
