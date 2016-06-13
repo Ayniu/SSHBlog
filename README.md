@@ -9,5 +9,6 @@
   2. 用户主页可以显示关注的人的微博
   3. 外键实体类关联表的存储与删除的处理的理解还不够透彻，需加强！
 
-- Usage: 
+- Usage
+
   在Eclipse等IDE中新建Web Project，命名为weibo，将本项目代码拷贝进去，接着将项目部署到服务器。在浏览器输入×××localhost:port/weibo/home.jsp×××即可访问
