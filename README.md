@@ -11,4 +11,4 @@
 
 - Usage
 
-  在Eclipse等IDE中新建Web Project，命名为weibo，将本项目代码拷贝进去，接着将项目部署到服务器。在浏览器输入×××localhost:port/weibo/home.jsp×××即可访问
+  在Eclipse等IDE中新建Web Project，命名为weibo，将本项目代码拷贝进去，接着将项目部署到服务器。在浏览器输入***localhost:port/weibo/home.jsp***即可访问.(home.jsp为入口文件)
