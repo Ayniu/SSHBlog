@@ -4,10 +4,7 @@ import java.util.List;
 
 import org.hibernate.Query;
 import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import dao.BaseDAO;
 import dao.IUserDAO;
@@ -78,11 +75,7 @@ public class UserDAO extends BaseDAO implements IUserDAO {
 			session = getSession();
 			// 开始事务
 			tx = session.beginTransaction();
-			System.out.println(user.getUserid() + "为"
-					+ user.getGender() + "\n");
 			session.update(user);
-			System.out.println("修改User Name：" + "为"
-					+ user.getUsername() + "成功");
 			// 事务要在返回之前commit
 			tx.commit();
 			session.close();

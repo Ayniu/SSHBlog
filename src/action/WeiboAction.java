@@ -65,7 +65,7 @@ public class WeiboAction extends SuperAction implements ModelDriven<Weibo> {
 		int currentPage = request.getParameter("currentPage")!=null ? Integer.parseInt(request.getParameter("currentPage")) : 1;
 		Pager pager = new Pager(currentPage, totalSize);
 		Weibo[] weibos = weiboService.getWeibosByUseridPaging(userid, currentPage, pager.getPageSize());
-		Map request = (Map) ActionContext.getContext().get("request");
+		Map<String, Object> request = (Map) ActionContext.getContext().get("request");
 		if (weibos != null) {
 			request.put("weibos", weibos);
 			request.put("pager", pager);
